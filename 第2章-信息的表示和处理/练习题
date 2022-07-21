@@ -44,3 +44,56 @@ C 整数除去首个1，其后续部分在浮点数中出现。浮点数中一�
 2.7
 61 62 63 64 65 66
 
+2.8
+10010110
+10101010
+01000001
+01111101
+00111100
+
+2.9
+A 黑色-白色 蓝色-黄色 绿色-红紫色 红色-蓝绿色
+B 蓝绿色 绿色 蓝色
+
+2.10
+a b
+a a^b
+b a^b
+b a
+
+2.11
+A k k
+B 因为first和last指向内存中同一位置，同一位置对自身做异或运算最终得到0.
+C 将first<=last改为first<last即可。
+
+2.12
+A x & 0xFF
+B x^~0xFF
+C x | 0xFF
+
+2.13
+/* Declarations of functions implementing operations bis and bic */
+int bis(int x, int m);
+int bic(int x, int m);
+
+/* Compute x|y using only calls to functions bis and bic */
+int bool_or(int x, int y) {
+    int result = bis(x, y);
+    return result;
+}
+
+/* Compute x^y using only calls to functions bis and bic */
+int bool_xor(int x, int y) {
+    int result = bis(bic(x, y), bic(y, x));
+    return result;
+}
+
+2.14
+0x20 0x01
+0x7F 0x01
+0xDF 0x00
+0x00 0x01
+
+2.15
+!(x^y)
+
